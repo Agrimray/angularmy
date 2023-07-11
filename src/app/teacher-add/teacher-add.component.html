@@ -1,0 +1,44 @@
+<button [routerLink]="['../tResult']" class="my-buttonback">Back</button>
+  <div class="container my-4">
+  
+    <form #addData="ngForm" (ngSubmit)="addStudent(addData.value)" method="post" class="my-form" novalidate>
+      <div class="form-group">
+        <label for="rollNumber" class="my-label">Roll Number</label>
+        <input class="my-input" type="number" name="rollNumber" required [(ngModel)]="student.rollNumber" #rollNumber="ngModel">
+        <div *ngIf="rollNumber.invalid && (rollNumber.dirty || rollNumber.touched)" class="error-message">
+          <span *ngIf="rollNumber.errors?.['required']">Roll Number is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name" class="my-label">Name</label>
+        <input class="my-input" type="text" name="studentName" required [(ngModel)]="student.studentName" #studentName="ngModel">
+        <div *ngIf="studentName.invalid && (studentName.dirty || studentName.touched)" class="error-message">
+          <span *ngIf="studentName.errors?.['required']">Name is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date_of_birth" class="my-label">Date Of Birth</label>
+        <input class="my-input" type="date" name="dateOfBirth" required [(ngModel)]="student.dateOfBirth" #dateOfBirth="ngModel">
+        <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="error-message">
+          <span *ngIf="dateOfBirth.errors?.['required']">Date of Birth is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="score" class="my-label">Score</label>
+        <input class="my-input" type="number" name="score" required [(ngModel)]="student.score" #score="ngModel">
+        <div *ngIf="score.invalid && (score.dirty || score.touched)" class="error-message">
+          <span *ngIf="score.errors?.['required']">Score is required.</span>
+        </div>
+      </div>
+      <div class="button-group">
+        <button class="my-button" type="submit" [disabled]="addData.invalid">Save</button>
+        <button class="my-button" type="reset">Clear</button>
+      </div>
+    </form>
+  
+    <br>
+    <br>
+  
+  </div>
+  
+ 

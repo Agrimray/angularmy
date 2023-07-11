@@ -1,0 +1,25 @@
+<div class="container mt-5 text-center"  *ngIf="result[0]">
+    <div class="row">
+      <div class="col">
+        <p class="font-weight-bold">Roll Number:</p>
+        <p>{{result[0].rollno}}</p>
+      </div>
+      <div class="col">
+        <p class="font-weight-bold">Name:</p>
+        <p>{{result[0].name}}</p>
+      </div>
+      <div class="col">
+        <p class="font-weight-bold">Date Of Birth:</p>
+        <p>{{result[0].dob}}</p>
+      </div>
+      <div class="col">
+        <p class="font-weight-bold">Score:</p>
+        <p>{{result[0].marks}}</p>
+      </div>
+    </div>
+    <button class="my-buttonback" (click)="goBack()">Back</button>
+  </div>
+  <div class="container mt-5 text-center" *ngIf="!result[0]">
+    <p>Not found</p>
+    <button class="my-buttonback" (click)="goBack()">Back</button>
+  </div>

@@ -1,0 +1,34 @@
+<button (click)="goBack()"  class="my-buttonback">Back</button>
+<div class="container my-4">  
+<form [formGroup]="editForm" (ngSubmit)="editStudent()" method="post" class="my-form">
+    <div class="form-group">
+        <label class="my-label" for="rollNumber">Roll Number</label>
+        
+        <input class="my-input" type="number" formControlName="rollNumber" value={{service.editRollnumber}} required>
+        
+    </div>
+    <div class="form-group ">
+        <label class="my-label" for="name">Name</label>
+       
+        <input class="my-input" type="text" formControlName="studentName" required>
+        
+    </div>
+    <div class="form-group">
+        <label class="my-label" for="date_of_birth">Date Of Birth</label>
+        
+        <input class="my-input" type="date" formControlName="dateOfBirth" required>
+        
+    </div>
+    <div class="form-group">
+        <label class="my-label" for="score">Score</label>
+        
+        <input class="my-input" type="number" formControlName="score" required>
+        
+    </div>
+    <div class="button-group">
+        <button class="my-button" >Save</button> 
+        
+    </div> 
+    
+</form> 
+</div>

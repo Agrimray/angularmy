@@ -1,0 +1,28 @@
+<div class="custom-button-wrap">
+    <button (click)="getToAdd()" class="custom-btn-primary">Add Record</button>
+    <button [routerLink]="['../tLogin']" class="custom-btn-secondary">Logout</button>
+  </div>
+  <div class="custom-table-wrap">
+    <table class="custom-table">
+      <tr class="custom-table-header-row">
+        <th>Roll Number</th>
+        <th>Name </th>
+        <th>DOB</th>
+        <th>Score</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let data of results" class="custom-table-row">
+        <td>{{data.rollno}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.dob}}</td>
+        <td>{{data.marks}}</td>
+        <td>
+          <div class="custom-table-button-wrap">
+            <button #btnEdit (click)="getEditResult(btnEdit.value)" value="{{data.rollno}}" class="custom-btn-primary">Edit</button>
+            <button #btnDelete (click)="deleteElement(btnDelete.value)" value="{{data.rollno}}" class="custom-btn-secondary">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  

@@ -1,0 +1,21 @@
+<div class="custom-container">
+    <div class="custom-row">
+      <div class="custom-col">
+        <div class="custom-login-wrap">
+          <h3 class="custom-login-title">Teacher Login</h3>
+          <form #teacherLogin="ngForm" (ngSubmit)="loginTeacher(teacherLogin.value)" method="post">
+            <div class="custom-form-group">
+              <input id="password" type="password" class="custom-form-control" name="password" id="password" placeholder="Password" required ngModel>
+              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+            <div class="custom-form-group">
+              <button class="custom-btn-primary">Sign In</button><br>
+              <br>
+              <button [routerLink]="['']" class="custom-btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
